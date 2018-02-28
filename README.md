@@ -77,3 +77,4 @@ less.addEventListener('click', function () {
   })
 })
 ```
+`reducer`定义怎样修改状态，`render`表示重新渲染视图
