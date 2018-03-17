@@ -82,4 +82,6 @@ less.addEventListener('click', function () {
   })
 })
 ```
-`reducer`定义怎样修改状态，`render`表示重新渲染视图，`dispatch`接收两个参数，改的类型，改的数据
+## 原理分析
+
+状态管理，不允许直接修改状态信息（`store.state.xxx='xxx'`）这样修改状态，redux不允许的原因是redux是统一的状态管理，直接修改会导致状态管理混乱。
