@@ -85,3 +85,25 @@ less.addEventListener('click', function () {
 ## 原理分析
 
 状态管理，不允许直接修改状态信息（`store.state.xxx='xxx'`）这样修改状态，redux不允许的原因是redux是统一的状态管理，直接修改会导致状态管理混乱。
+
+## 路由
+```js
+// path='/'可以匹配所以路径哦，如果不想让其他地方匹配，exact来处理可以精准匹配
+ReactDOM.render(
+  <HashRouter>
+    <div>
+      <Route path='/' exact component={A}/>
+      <Route path='/user' render={()=>{
+        let loginInfo = localStorage.getItem('ass_id')
+        if (!loginInfo) {
+          return (<div>请先登入</div>)
+          // 权限控制
+        }
+        return <B />
+      }}/>
+      <Route path='/user/singin' component={C}/>
+    </div>
+  </HashRouter>,
+  document.getElementById('root')
+);
+```
